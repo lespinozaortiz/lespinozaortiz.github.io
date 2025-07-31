@@ -86,6 +86,24 @@
         // Datos para proyectos con más detalles
         const projectsData = {
             project1: {
+                title: "Sistema de Gestión de Facturas",
+                subtitle: "Plataforma web para gestión y visualización de facturas",
+                description: "FlowInvoice es una aplicación full-stack diseñada para facilitar la gestión mediante importación masiva de facturas, búsqueda avanzada, asociación de notas de crédito y generación de reportes. Esta solución implementa una arquitectura por capas. Incluye una API REST documentada con Swagger, persistencia en SQLite reinicializable, despliegue vía Docker y separación de responsabilidades con patrones de diseño como Repositorio y DTOs.",
+                technologies: ["C#", "JavaScript", "Git", "ASP.NET Core 8", "React.js", "SQLite", "EF Core", "Swagger", "Docker"],
+                features: [
+                    "Importación masiva de facturas desde archivos JSON",
+                    "Filtro y búsqueda avanzada por número y estados",
+                    "Gestión de notas de crédito asociadas",
+                    "Reportes de facturas vencidas, estado de pagos y facturas inconsistentes",
+                    "API RESTful documentada con Swagger",
+                    "Base de datos reiniciable para entornos de prueba y demo"
+                ],
+                imageUrl: "/img/flowinvoicess.png",
+                demoLink: "#",
+                codeLink: "https://github.com/lespinozaortiz/FlowInvoice"
+            },
+            
+            project2: {
                 title: "Sistema de Gestión de Experimentos ML",
                 subtitle: "Plataforma para seguimiento y comparación de modelos de Machine Learning",
                 description: "Este proyecto consistió en el desarrollo de una plataforma para el seguimiento de experimentos de Machine Learning orientada a problemas de clasificación, enfocada en asegurar reproducibilidad y trazabilidad en entornos académicos. La solución, implementada con Django (backend) y React.js (frontend), integra MLflow para el seguimiento automatizado de experimentos y DVC para el control de versiones de datos y modelos. Incluye un pipeline que automatiza todas las etapas del ciclo de vida del modelo —desde la ingestión de datos hasta la validación— permitiendo registrar configuraciones, hiperparámetros, métricas y artefactos de forma estructurada. Ofrece visualización comparativa de resultados, generación de informes en PDF y ejecución reproducible sobre datasets tratados y no tratados. El sistema fue diseñado para ejecutarse en entornos locales.",
@@ -102,7 +120,7 @@
                 demoLink: "#",
                 codeLink: "#"
             },
-            project2: {
+            project3: {
                 title: "Sistema de Gestión Académica",
                 subtitle: "Plataforma para la gestión académica y curricular.",
                 description: "Desarrollé un sistema de gestión académica para una institución de educación superior, enfocado en centralizar y administrar la información de carreras y planes de estudio, incluyendo la integración con sistemas nacionales. El proyecto se implementó utilizando Gin (Go) con el ORM Gorm para construir un backend robusto y de alto rendimiento, una base de datos PostgreSQL para el almacenamiento de datos, y una interfaz de usuario creada con Vue.js, Axios y Bootstrap.",
@@ -118,7 +136,7 @@
                 demoLink: "#",
                 codeLink: "#"
             },
-            project3: {
+            project4: {
                 title: "MarteAI Data Analytics",
                 subtitle: "Plataforma de análisis de datos con Chatbot Interactivo",
                 description: "MarteAI es una aplicación web full-stack diseñada para el análisis inteligente de datos. La plataforma permite a los usuarios cargar archivos CSV para obtener un análisis descriptivo y visual de la información, interactuando a través de un chatbot en lenguaje natural para realizar consultas específicas ",
@@ -135,7 +153,7 @@
                 demoLink: "#",
                 codeLink: "#"
             },
-            project4: {
+            project5: {
                 title: "Aplicación web Tritium Spa",
                 subtitle: "Sistema de gestión de clientes y cotizaciones",
                 description: "Participé en el desarrollo de una solución tecnológica para la empresa Tritium, cumpliendo roles de QA, DevOps y desarrollo. El proyecto incluye un sistema de manejo de clientes, una página web, gestión de cotizaciones y un chatbot para mejorar la interacción con los clientes y optimizar el flujo de trabajo. Contribuí con el desarrollo de funcionalidades en React.js, la automatización de despliegues con pipelines CI/CD, el diseño de pruebas de calidad, la implementación de autenticación con JWT y la creación de un chatbot en Flask integrado con la API de Gemini.",
@@ -152,7 +170,7 @@
                 demoLink: "#",
                 codeLink: "https://github.com/lespinozaortiz/Tritium_dev"
             },
-            project5: {
+            project6: {
                 title: "Intranet Académica Usach",
                 subtitle: "Plataforma de Gestión Estudiantil",
                 description: "Desarrollo de una aplicación web monolítica para la gestión académica, incluyendo administración de estudiantes, horarios, inscripciones a carreras y calificaciones. La plataforma, construida con Spring Boot y React, centraliza las operaciones académicas en una intranet intuitiva. El despliegue se automatizó utilizando un stack de DevOps con Docker, Terraform, Jenkins y Nginx sobre AWS.",

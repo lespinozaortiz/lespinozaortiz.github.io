@@ -59,7 +59,12 @@
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 
-                const target = document.querySelector(this.getAttribute('href'));
+                const href = this.getAttribute('href');
+                if (href === '#') {
+                    return;
+                }
+                
+                const target = document.querySelector(href);
                 if (target) {
                     window.scrollTo({
                         top: target.offsetTop - 80,
@@ -105,19 +110,23 @@
             
             project2: {
                 title: "Sistema de Gestión de Experimentos ML",
-                subtitle: "Plataforma para seguimiento y comparación de modelos de Machine Learning",
-                description: "Este proyecto consistió en el desarrollo de una plataforma para el seguimiento de experimentos de Machine Learning orientada a problemas de clasificación, enfocada en asegurar reproducibilidad y trazabilidad en entornos académicos. La solución, implementada con Django (backend) y React.js (frontend), integra MLflow para el seguimiento automatizado de experimentos y DVC para el control de versiones de datos y modelos. Incluye un pipeline que automatiza todas las etapas del ciclo de vida del modelo —desde la ingestión de datos hasta la validación— permitiendo registrar configuraciones, hiperparámetros, métricas y artefactos de forma estructurada. Ofrece visualización comparativa de resultados, generación de informes en PDF y ejecución reproducible sobre datasets tratados y no tratados. El sistema fue diseñado para ejecutarse en entornos locales.",
+                subtitle: "Trabajo de título publicado en SCCC 2025 / IEEE Xplore",
+                description: "Diseñé e implementé un sistema para gestionar experimentos de aprendizaje automático enfocado en modelos de clasificación. La propuesta aborda el desafío de la reproducibilidad en investigación de Machine Learning mediante principios de MLOps, facilitando la gestión, documentación, trazabilidad y seguimiento de experimentos. La solución incluye backend con Django, frontend en React.js e integración de MLflow, DVC y Docker para registrar configuraciones, hiperparámetros, métricas y artefactos de forma estructurada en entornos locales. Este trabajo de título fue aceptado y publicado como paper en la 44th International Conference of the Chilean Computer Science Society (SCCC 2025), y quedó disponible en IEEE Xplore.",
                 technologies: ["Python", "JavaScript", "Git", "Django", "React.js", "SQLite", "MLflow", "DVC", "Docker", "Pandas", "Numpy", "Scikit-Learn","Matplotlib", "Seaborn", "CodeCarbon", "Ydata Profiling", "Sweetviz"],
                 features: [
-                    "Registro de experimentos con parámetros y métricas",
+                    "Paper publicado en SCCC 2025 e IEEE Xplore",
+                    "Registro de experimentos con parámetros, métricas y artefactos",
                     "Visualización comparativa de modelos",
                     "Generación de informes automatizados",
+                    "Trazabilidad y reproducibilidad mediante principios de MLOps",
                     "Control de versiones de datos con DVC",
                     "Integración con MLflow para tracking",
                     "Despliegue en contenedores Docker"
                 ],
                 imageUrl: "/img/dreammlss.png",
-                demoLink: "#",
+                demoLink: "https://ieeexplore.ieee.org/document/11420746",
+                demoLabel: "Ver paper",
+                demoIcon: "fas fa-file-alt",
                 codeLink: "#"
             },
             project3: {
@@ -226,8 +235,16 @@
                         featuresList.appendChild(featureItem);
                     });
                     
-                    document.getElementById('modalDemoLink').href = project.demoLink;
-                    document.getElementById('modalCodeLink').href = project.codeLink;
+                    const modalDemoLink = document.getElementById('modalDemoLink');
+                    const modalCodeLink = document.getElementById('modalCodeLink');
+                    
+                    modalDemoLink.href = project.demoLink;
+                    modalDemoLink.innerHTML = `<i class="${project.demoIcon || 'fas fa-external-link-alt'}"></i> ${project.demoLabel || 'Ver demo'}`;
+                    modalDemoLink.style.display = 'inline-flex';
+                    
+                    modalCodeLink.href = project.codeLink;
+                    modalCodeLink.innerHTML = `<i class="${project.codeIcon || 'fab fa-github'}"></i> ${project.codeLabel || 'Ver código'}`;
+                    modalCodeLink.style.display = 'inline-flex';
                     
                     projectModal.style.display = 'block';
                     document.body.style.overflow = 'hidden';
